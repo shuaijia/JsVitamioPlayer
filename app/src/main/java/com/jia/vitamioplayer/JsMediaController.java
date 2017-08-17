@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -95,7 +96,8 @@ public class JsMediaController extends MediaController {
         View v = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate
 
                 (getResources().getIdentifier("mymediacontroller", "layout", getContext().getPackageName()), this);
-        v.setMinimumHeight(controllerWidth);
+//        v.setMinimumHeight(controllerWidth);
+        v.setLayoutParams(new ViewGroup.LayoutParams(videoView.getWidth(),videoView.getHeight()));
         //获取控件
         img_back = (ImageButton) v.findViewById(getResources().getIdentifier("mediacontroller_top_back", "id",
 

@@ -6,17 +6,11 @@
     android:background="#000000"
     tools:context="com.jia.vitamioplayer.MainActivity">
 
-    <io.vov.vitamio.widget.CenterLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
 
         <io.vov.vitamio.widget.VideoView
             android:id="@+id/videoView"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:layout_centerInParent="true"/>
+            />
 
-    </io.vov.vitamio.widget.CenterLayout>
 </RelativeLayout>
