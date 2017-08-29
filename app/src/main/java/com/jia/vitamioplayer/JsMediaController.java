@@ -93,11 +93,11 @@ public class JsMediaController extends MediaController {
     @Override
     protected View makeControllerView() {
         //此处的   mymediacontroller  为我们自定义控制器的布局文件名称
-        View v = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate
-
-                (getResources().getIdentifier("mymediacontroller", "layout", getContext().getPackageName()), this);
+//        View v = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate
+//                (getResources().getIdentifier("mymediacontroller", "layout", getContext().getPackageName()), this,true);
+        View v=LayoutInflater.from(context).inflate(R.layout.mymediacontroller,this,true);
 //        v.setMinimumHeight(controllerWidth);
-        v.setLayoutParams(new ViewGroup.LayoutParams(videoView.getWidth(),videoView.getHeight()));
+//        v.setLayoutParams(new ViewGroup.LayoutParams(videoView.getWidth(),videoView.getHeight()));
         //获取控件
         img_back = (ImageButton) v.findViewById(getResources().getIdentifier("mediacontroller_top_back", "id",
 

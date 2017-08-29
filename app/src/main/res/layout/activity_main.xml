@@ -4,13 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
+    android:orientation="vertical"
     tools:context="com.jia.vitamioplayer.MainActivity">
+
+
 
 
         <io.vov.vitamio.widget.VideoView
             android:id="@+id/videoView"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            />
+            android:layout_centerInParent="true"/>
+
 
 </RelativeLayout>

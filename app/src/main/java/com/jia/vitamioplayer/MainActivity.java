@@ -2,13 +2,11 @@ package com.jia.vitamioplayer;
 
 import android.app.Activity;
 import android.content.res.Configuration;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
 import io.vov.vitamio.MediaPlayer;
 import io.vov.vitamio.Vitamio;
-import io.vov.vitamio.widget.MediaController;
 import io.vov.vitamio.widget.VideoView;
 
 public class MainActivity extends Activity {
@@ -16,6 +14,8 @@ public class MainActivity extends Activity {
     private static final String TAG = "VitamioPlayer";
 
     private VideoView videoView;
+
+    private JsMediaController mediaController;
 
     private String path = "http://baobab.wdjcdn.com/145076769089714.mp4";
 
@@ -28,11 +28,14 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-        videoView = (VideoView) findViewById(R.id.videoView);
+        videoView = findViewById(R.id.videoView);
+
         videoView.setVideoPath(path);
         videoView.setVideoQuality(MediaPlayer.VIDEOQUALITY_HIGH);//高画质
-        videoView.setMediaController(new JsMediaController(this, videoView, this));
+        mediaController = new JsMediaController(this, videoView, this);
+        videoView.setMediaController(mediaController);
         videoView.requestFocus();
+        mediaController.setVideoName("尽享人生");
 
         videoView.start();
 
@@ -81,6 +84,7 @@ public class MainActivity extends Activity {
 //                Log.e(TAG, "onBufferingUpdate: "+percent );
             }
         });
+
     }
 
     @Override
@@ -96,4 +100,5 @@ public class MainActivity extends Activity {
         }
         super.onConfigurationChanged(newConfig);
     }
+
 }
